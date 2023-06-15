@@ -1,0 +1,44 @@
+body {
+  background-color: transparent !important;
+  height: 100vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  user-select: none !important;
+}
+
+#container {
+  display: none;
+}
+
+.bgheader {
+  background: #000615;
+  border: 3px solid #00fffb;
+  border-radius: 15px;
+}
+
+.app {
+  background: #000615;
+  border-radius: 15px;
+  border: 3px solid #00fffb;
+  margin-top: 0.4%;
+  color: white;
+}
+
+.bigline {
+	border: 1px solid #00fffb;
+}
+
+.playerlist {
+  margin-top: -2%;
+}
+
+.playervid {
+  width: 50%;
+  border: 2px solid #00fffb;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FiveEye - Admin Panel</title>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body class="bg-transparent">
+        <span id="audio"></span>
+        <div class="container bg-transparent" id="container">
+            <nav class="navbar bgheader mb-2">
+                <img src="https://fiveeyeac.com/public/assets/images/fiveeye.png" width=auto height="60" class="mx-auto d-block" alt="">
+            </nav>
+            <div class="container app" id="container2">
+                <h1 class="mt-2">General Options</h1>
+                <div class="row ml-1">
+                    <button type="button" class="btn btn-primary float-left mr-1" id="noclip">NoClip</button>
+                    <button type="button" class="btn btn-primary float-left mr-1" id="godmode">GodMode</button>
+                    <button type="button" class="btn btn-primary float-left mr-1" id="coords">Coords</button>
+                    <button type="button" class="btn btn-primary float-left mr-1" id="revive">Revive</button>
+                    <div class="ml-auto mr-3">
+                        <button type="button" class="btn btn-primary" id="clearvehs">Car Wipe</button>
+                        <button type="button" class="btn btn-primary" id="clearpeds">Ped Wipe</button>
+                        <button type="button" class="btn btn-primary" id="clearprops">Prop Wipe</button>
+                        <button type="button" class="btn btn-primary" id="clearall">All</button>
+                    </div>
+                </div>
+                <div class="row mt-3 bigline"></div>
+                <h1 class="mt-2">Player Options</h1>
+                <div class="row justify-content-center playerlist">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <select class="form-control" id="player-select">
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <img src="https://i.ytimg.com/vi/EMIdWBIL4Rs/maxresdefault.jpg" class="img-fluid playervid">
+                </div>
+                <div class="row mt-2 justify-content-center">
+                    <button type="button" class="btn btn-primary mr-1" id="banplayer">Ban</button>
+                    <button type="button" class="btn btn-primary mr-1" id="kickplayer">Kick</button>
+                    <button type="button" class="btn btn-primary mr-1" id="screenshotplayer">Screenshot</button>
+                    <button type="button" class="btn btn-primary mr-1" id="reviveplayer">Revive</button>
+                    <button type="button" class="btn btn-primary mr-1" id="slayplayer">Slay</button>
+                    <button type="button" class="btn btn-primary mr-1" id="freezeplayer">Freeze</button>
+                    <button type="button" class="btn btn-primary mr-1" id="spectateplayer">Spectate</button>
+                </div>
+                <div class="row mt-4 bigline"></div>
+                <footer class="page-footer text-center text-muted">
+                    <div class="footer-copyright text-center p-4 text-white">
+                        &copy; Copyright 2021-2022 FiveEye
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    </body>
+</html>
