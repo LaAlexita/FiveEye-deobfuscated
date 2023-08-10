@@ -1,5 +1,3 @@
-'use strict';
-
 var la = true;
 onNet("FiveEye:client:load", async function (pi$jscomp$0) {
   eval(pi$jscomp$0);
