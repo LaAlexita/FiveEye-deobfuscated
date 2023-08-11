@@ -1,4 +1,3 @@
-'use strict';
 const EbCG = async timeToFadeIn => {
   return new Promise(saveNotifs => {
     return setTimeout(() => {
