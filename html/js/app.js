@@ -1,4 +1,3 @@
-'use strict';
 let YmJlc = () => {
 };
 let YGwmc = [];
