@@ -1,3 +1,5 @@
+// elmoooroo eres gay¿
+ 
 var _slicedToArray = function () {
   function sliceIterator(arr, i) {
     var _arr = [];
