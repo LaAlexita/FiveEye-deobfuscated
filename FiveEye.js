@@ -1,2109 +1,1539 @@
-const ciNI = async timeToFadeIn => {
-    return new Promise(saveNotifs => {
-        return setTimeout(() => {
-            return saveNotifs();
-        }, timeToFadeIn);
-    });
+const a = async a => {
+  return new Promise(b => {
+    return;
+    // TOLOOK
+    setTimeout(() => {
+      return b();
+    }, a);
+  });
 };
-const UvoJ = [
-    'txsv',
-    'txAdmin',
-    'cfx',
-    'FiveEye',
-    'cs',
-    'playerEnteredScope',
-    'playerLeftScope',
-    'entityRemoved',
-    'entityCreating',
-    'entityCreated',
-    'ptfxEvent',
-    'clearPedTasksEvent',
-    'giveWeaponEvent',
-    'removeWeaponEvent',
-    'ptFxEvent',
-    'explosionEvent',
-    'startProjectileEvent',
-    'startprojectileevent',
-    'onServerResourceStop',
-    'onResourceListRefresh',
-    'onResourceStart',
-    'onServerResourceStart',
-    'onResourceStarting',
-    'onResourceStop',
-    'playerConnecting',
-    'playerDropped',
-    'rconCommand',
-    '__cfx_internal:commandFallback',
-    'commandLoggerDiscord:commandWasExecuted',
-    'playerJoining'
-];
-const orfJ = pingErr => {
-    let ashex = pingErr.toString(16);
-    if (ashex.length % 2 > 0) {
-        ashex = '0' + ashex;
-    }
-    return ashex;
+const b = ["txsv", "txAdmin", "cfx", "FiveEye", "cs", "playerEnteredScope", "playerLeftScope", "entityRemoved", "entityCreating", "entityCreated", "ptfxEvent", "clearPedTasksEvent", "giveWeaponEvent", "removeWeaponEvent", "ptFxEvent", "explosionEvent", "startProjectileEvent", "startprojectileevent", "onServerResourceStop", "onResourceListRefresh", "onResourceStart", "onServerResourceStart", "onResourceStarting", "onResourceStop", "playerConnecting", "playerDropped", "rconCommand", "__cfx_internal:commandFallback", "commandLoggerDiscord:commandWasExecuted", "playerJoining"];
+const d = a => {
+  let b = a.toString(16);
+  if (b.length % 2 > 0) {
+    b = "0" + b;
+  }
+  return b;
 };
-const QcGE = param_hash => {
-    let _bytes = [];
-    let b;
-    for (let i = 0; i < param_hash.length; ++i) {
-        b = param_hash.charCodeAt(i);
-        _bytes.push((b & 65280) >> 8);
-        _bytes.push(b & 255);
-    }
-    return b;
+const e = a => {
+  let c = [];
+  let d;
+  for (let b = 0; b < a.length; ++b) {
+    d = a.charCodeAt(b);
+    c.push((d & 65280) >> 8);
+    c.push(d & 255);
+  }
+  return d;
 };
-const kYwE = serverElements => {
-    const sOgA = 9770352761048074;
-    const UPjA = 2022;
-    for (let i = 0; i < 127; i++) {
-        let media_i = -1;
-        do {
-            media_i = media_i + 2;
-        } while (media_i * (2 * i + 1) % 256 !== 1);
-        media[i] = media_i;
-    }
-    let col = 9770352761048074;
-    let Asrx = '';
-    const t = 18406;
-    for (let i = 0; i < serverElements.length; i++) {
-        const c = col % 274877906944;
-        const b = (col - c) / 274877906944;
-        const a = b % 128;
-        const skipped = QcGE(serverElements[i]);
-        const failed = (skipped * 1 - (b - a) / 128) % 256;
-        col = c * 18406 + b + failed + skipped;
-        Asrx = Asrx + ('FiveEye-' + orfJ(failed));
-    }
-    return Asrx;
+const f = f => {
+  for (let a = 0; a < 127; a++) {
+    let b = -1;
+    do {
+      b = b + 2;
+    } while (b * (a * 2 + 1) % 256 !== 1);
+    media[a] = b;
+  }
+  let g = 9770352761048074;
+  let h = "";
+  for (let j = 0; j < f.length; j++) {
+    const i = g % 274877906944;
+    const c = (g - i) / 274877906944;
+    const b = c % 128;
+    const a = e(f[j]);
+    const l = (a * 1 - (c - b) / 128) % 256;
+    g = i * 18406 + c + l + a;
+    h = h + ("FiveEye-" + d(l));
+  }
+  return h;
 };
 if (IsDuplicityVersion()) {
-    if (GetCurrentResourceName() !== 'FiveEye') {
-        const init = flightPhase => {
-            const wZIs = {
-                JIorQ: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                BNkaO: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                CRdbz: function (value, joiner) {
-                    return value !== joiner;
-                },
-                ofReM: 'jOrtC',
-                kvrZE: function (value, joiner) {
-                    return value !== joiner;
-                },
-                jFNVa: 'number',
-                hTZyG: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                QnPBo: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                odecE: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                MHiOf: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                UYRVz: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                Wukao: function (cb, TextureClass, callback, gzipped, external_b) {
-                    return cb(TextureClass, callback, gzipped, external_b);
-                },
-                YFVjN: 'FiveEye:server:detection',
-                XiKeR: 'AntiTriggers',
-                UMIrS: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                uPkml: function (require, exports, module) {
-                    return require(exports, module);
-                }
-            };
-            onNet(flightPhase, () => {
-                if (typeof source !== 'number') {
-                    Number(source);
-                }
-                if (source === null || source <= 0 || GetPlayerPed(source) === null || GetPlayerPed(source) <= 0) {
-                    return;
-                }
-                emit('FiveEye:server:detection', 'AntiTriggers', 'Player tried to execute a trigger using an executor: ' + ev + '. Resource: ' + GetCurrentResourceName(), source);
-                return CancelEvent();
-            });
-        };
-        const translate = async results => {
-            if (UvoJ.includes(results)) {
-                return true;
+  if (GetCurrentResourceName() !== "FiveEye") {
+    const c = a => {
+      onNet(a, () => {
+        if (typeof source !== "number") {
+          Number(source);
+        }
+        if (source === null || source <= 0 || GetPlayerPed(source) === null || GetPlayerPed(source) <= 0) {
+          return;
+        }
+        emit("FiveEye:server:detection", "AntiTriggers", "Player tried to execute a trigger using an executor: " + ev + ". Resource: " + GetCurrentResourceName(), source);
+        return CancelEvent();
+      });
+    };
+    const d = async a => {
+      if (b.includes(a)) {
+        return true;
+      }
+      b.forEach(b => {
+        if (a.includes(b)) {
+          return true;
+        }
+      });
+      return false;
+    };
+    global.emit = async (...a) => {
+      if (d(name)) {
+        return emit(name, retType);
+      }
+      const b = cache[name] || f(name + "FiveEye-ProtectedEvent");
+      cache[name] = b;
+      return emit(b, retType);
+    };
+    global.TriggerEvent = async (...a) => {
+      if (d(name)) {
+        return emit(name, retType);
+      }
+      const b = cache[name] || f(name + "FiveEye-ProtectedEvent");
+      cache[name] = b;
+      return emit(b, retType);
+    };
+    global.on = async (...a) => {
+      if (d(path)) {
+        return on(path, value);
+      }
+      const b = cache[path] || f(path + "FiveEye-ProtectedEvent");
+      cache[path] = b;
+      if (!value || typeof value !== "function") {
+        return on(path, value);
+      }
+      c(path);
+      return on(b, value);
+    };
+    global.AddEventHandler = async (...a) => {
+      if (d(path)) {
+        return on(path, value);
+      }
+      const b = cache[path] || f(path + "FiveEye-ProtectedEvent");
+      cache[path] = b;
+      if (!value || typeof value !== "function") {
+        return on(path, value);
+      }
+      c(path);
+      return on(b, value);
+    };
+    global.onNet = async (...a) => {
+      if (d(name)) {
+        return onNet(name, value);
+      }
+      const b = cache[name] || f(name + "FiveEye-ProtectedEvent");
+      cache[name] = b;
+      if (!value || typeof value !== "function") {
+        return onNet(name, value);
+      }
+      c(name);
+      return onNet(b, value);
+    };
+    global.RegisterNetEvent = async (...a) => {
+      if (d(name)) {
+        return RegisterNetEvent(name, value);
+      }
+      const b = cache[name] || f(name + "FiveEye-ProtectedEvent");
+      cache[name] = b;
+      if (!value || typeof value !== "function") {
+        return RegisterNetEvent(name, value);
+      }
+      c(name);
+      return RegisterNetEvent(b, value);
+    };
+    global.RegisterServerEvent = async (...a) => {
+      if (d(name)) {
+        return RegisterNetEvent(name, value);
+      }
+      const b = cache[name] || f(name + "FiveEye-ProtectedEvent");
+      cache[name] = b;
+      if (!value || typeof value !== "function") {
+        return RegisterNetEvent(name, value);
+      }
+      c(name);
+      return RegisterNetEvent(b, value);
+    };
+    const e = async b => {
+      const c = setTick(async () => {
+        let d = 0;
+        while (!DoesEntityExist(b) && d < 1000) {
+          d++;
+          await a(0);
+        }
+        if (d > 1000) {
+          return clearTick(c);
+        }
+        d = 0;
+        while (d <= 1000) {
+          if (DoesEntityExist(b)) {
+            if (Entity(b).state.FiveEye !== "waiting") {
+              return clearTick(c);
             }
-            UvoJ.forEach(datum => {
-                if (results.includes(datum)) {
-                    return true;
-                }
-            });
-            return false;
-        };
-        global.emit = async (...func) => {
-            if (translate(name)) {
-                return emit(name, retType);
-            }
-            const messages = cache[name] || kYwE(name + 'FiveEye-ProtectedEvent');
-            cache[name] = messages;
-            return emit(messages, retType);
-        };
-        global.TriggerEvent = async (...func) => {
-            if (translate(name)) {
-                return emit(name, retType);
-            }
-            const messages = cache[name] || kYwE(name + 'FiveEye-ProtectedEvent');
-            cache[name] = messages;
-            return emit(messages, retType);
-        };
-        global.on = async (...params) => {
-            if (translate(path)) {
-                return on(path, value);
-            }
-            const val = cache[path] || kYwE(path + 'FiveEye-ProtectedEvent');
-            cache[path] = val;
-            if (!value || typeof value !== 'function') {
-                return on(path, value);
-            }
-            init(path);
-            return on(val, value);
-        };
-        global.AddEventHandler = async (...params) => {
-            if (translate(path)) {
-                return on(path, value);
-            }
-            const val = cache[path] || kYwE(path + 'FiveEye-ProtectedEvent');
-            cache[path] = val;
-            if (!value || typeof value !== 'function') {
-                return on(path, value);
-            }
-            init(path);
-            return on(val, value);
-        };
-        global.onNet = async (...pair) => {
-            if (translate(name)) {
-                return onNet(name, value);
-            }
-            const tableMeta = cache[name] || kYwE(name + 'FiveEye-ProtectedEvent');
-            cache[name] = tableMeta;
-            if (!value || typeof value !== 'function') {
-                return onNet(name, value);
-            }
-            init(name);
-            return onNet(tableMeta, value);
-        };
-        global.RegisterNetEvent = async (...pair) => {
-            if (translate(name)) {
-                return RegisterNetEvent(name, value);
-            }
-            const tableMeta = cache[name] || kYwE(name + 'FiveEye-ProtectedEvent');
-            cache[name] = tableMeta;
-            if (!value || typeof value !== 'function') {
-                return RegisterNetEvent(name, value);
-            }
-            init(name);
-            return RegisterNetEvent(tableMeta, value);
-        };
-        global.RegisterServerEvent = async (...pair) => {
-            if (translate(name)) {
-                return RegisterNetEvent(name, value);
-            }
-            const tableMeta = cache[name] || kYwE(name + 'FiveEye-ProtectedEvent');
-            cache[name] = tableMeta;
-            if (!value || typeof value !== 'function') {
-                return RegisterNetEvent(name, value);
-            }
-            init(name);
-            return RegisterNetEvent(tableMeta, value);
-        };
-        const handler = async i => {
-            const pekeUpload = {
-                JXTyV: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                WKsCG: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                UPEem: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Cluey: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                zqZEb: function (value, joiner) {
-                    return value !== joiner;
-                },
-                pMxCb: 'LRDYI',
-                vKWHQ: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                nJwLM: function (progressOld, progressNew) {
-                    return progressOld < progressNew;
-                },
-                YJNmy: 'RonaV',
-                GUUwg: 'UsmRu',
-                zzvSn: function (_num1, _num2) {
-                    return _num1 > _num2;
-                },
-                BWRJy: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                Cagir: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                RCvrv: 'HbnzJ',
-                wtZUd: 'aOHMh',
-                MiahW: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                jfrQW: 'RKPqj',
-                IewDK: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                YxfQl: 'waiting',
-                bbDYu: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                ZQLlF: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                nUIKY: 'FiveEye',
-                zkZSm: 'protected',
-                gLyik: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                uZjWf: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                Ticbn: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                umGIc: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const pos = setTick(async () => {
-                let AQdVb = 0;
-                for (; !DoesEntityExist(i) && AQdVb < 1000;) {
-                    AQdVb++;
-                    await ciNI(0);
-                }
-                if (AQdVb > 1000) {
-                    return pekeUpload.Cluey(clearTick, pos);
-                }
-                AQdVb = 0;
-                for (; AQdVb <= 1000;) {
-                    if (pekeUpload.Cluey(DoesEntityExist, i)) {
-                        if (Entity(i).state.FiveEye !== 'waiting') {
-                            return clearTick(pos);
-                        }
-                        EnsureEntityStateBag(i);
-                        Entity(i).state.set('FiveEye', 'protected', true);
-                        return clearTick(pos);
-                    }
-                    AQdVb++;
-                    await ciNI(0);
-                }
-                clearTick(pos);
-            });
-        };
-        const render = async field => {
-            Player(field).state.bypassNoClip = true;
-            corpusFields[field] = GetGameTimer();
-            if (!checking[field]) {
-                checking[field] = {};
-            }
-            if (checking[field].NoClip) {
-                return;
-            }
-            checking[field].NoClip = true;
-            for (; true;) {
-                const artistTrack = Math.floor(Math.random() * 15000) + 5000;
-                await ciNI(artistTrack);
-                if (GetGameTimer() - corpusFields[field] > 5000) {
-                    Player(field).state.bypassNoClip = true;
-                    checking[field].NoClip = false;
-                    break;
-                }
-            }
-        };
-        global.SetEntityCoords = async (Markup, ...deltaB) => {
-            const transformedDeltasB = {
-                vtHJU: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                cZJbL: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                nbQWe: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                LXPJl: function (method, _super, ...rest) {
-                    return method(_super, ...rest);
-                }
-            };
-            if (DoesEntityExist(Markup)) {
-                render(NetworkGetEntityOwner(Markup));
-            }
-            return transformedDeltasB.LXPJl(SetEntityCoords, Markup, ...deltaB);
-        };
-        global.GiveWeaponToPed = async (cullBackFaces, result, ...collections) => {
-            const React = {
-                oCYHa: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                iLVGi: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                vqlfT: function (formatters, customFormatters) {
-                    return formatters + customFormatters;
-                },
-                dIiLd: function (value, joiner) {
-                    return value !== joiner;
-                },
-                eQNEq: function (number_to_dividee, divided_by) {
-                    return number_to_dividee % divided_by;
-                },
-                OsrvM: function (mmCoreSecondsDay, daysInterval) {
-                    return mmCoreSecondsDay * daysInterval;
-                },
-                yOVhD: function (formatters, customFormatters) {
-                    return formatters + customFormatters;
-                },
-                mrktT: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                mEPnj: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                YwyOh: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                SDzZF: function (value, joiner) {
-                    return value !== joiner;
-                },
-                KXYPk: 'Gxwdt',
-                TOndL: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                duSpR: function (text, contextClosing) {
-                    return text == contextClosing;
-                },
-                rjUAr: 'string',
-                zmjUa: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                YXkAO: 'kCube',
-                zUGyE: 'FZPJx',
-                uWQdC: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                wLiIJ: 'true',
-                tKNmg: function (text, contextClosing) {
-                    return text == contextClosing;
-                },
-                Hbqaa: 'number',
-                zHhtj: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                bminr: 'DOZLI',
-                jtciE: 'Nsdks',
-                CeEOK: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                KJiBb: function (cb, cullBackFaces, result, ...warns) {
-                    return cb(cullBackFaces, result, ...warns);
-                }
-            };
-            if (DoesEntityExist(cullBackFaces)) {
-                const cur = NetworkGetEntityOwner(cullBackFaces);
-                if (typeof result == 'string') {
-                    Player(cur).state[GetHashKey(result).toString()] = 'true';
-                } else {
-                    if (typeof result == 'number') {
-                        Player(cur).state[result.toString()] = 'true';
-                    }
-                }
-                await ciNI(500);
-            }
-            return React.KJiBb(gwtps, cullBackFaces, result, ...collections);
-        };
-        global.CreateObject = async (...args) => {
-            const a = {
-                kZZHk: function (method, ...taskArgs) {
-                    return method(...taskArgs);
-                }
-            };
-            const cb_decode = a.kZZHk(CreateObject, ...args);
-            a.kZZHk(handler, cb_decode);
-            return cb_decode;
-        };
-        global.CreateObjectNoOffset = async (...args) => {
-            const azk_channel = {
-                Tgkjy: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                wrVmB: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = azk_channel.Tgkjy(CreateObjectNoOffset, ...args);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.CreateVehicle = async (...args) => {
-            const console = {
-                RNWmU: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.RNWmU(CreateVehicle, ...args);
-            console.RNWmU(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreatePed = async (...args) => {
-            const postMiddleware = {
-                kazRw: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                Kcjld: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = postMiddleware.kazRw(CreatePed, ...args);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.CreatePedInsideVehicle = async (...cumulativeMaxArray) => {
-            const Collection = {
-                arRYW: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                tcizm: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = Collection.arRYW(CreatePedInsideVehicle, ...cumulativeMaxArray);
-            handler(handlerForName);
-            return handlerForName;
-        };
+            EnsureEntityStateBag(b);
+            Entity(b).state.set("FiveEye", "protected", true);
+            return clearTick(c);
+          }
+          d++;
+          await a(0);
+        }
+        clearTick(c);
+      });
+    };
+    const g = async b => {
+      Player(b).state.bypassNoClip = true;
+      corpusFields[b] = GetGameTimer();
+      if (!checking[b]) {
+        checking[b] = {};
+      }
+      if (checking[b].NoClip) {
+        return;
+      }
+      checking[b].NoClip = true;
+      while (true) {
+        const c = Math.floor(Math.random() * 15000) + 5000;
+        await a(c);
+        if (GetGameTimer() - corpusFields[b] > 5000) {
+          Player(b).state.bypassNoClip = true;
+          checking[b].NoClip = false;
+          break;
+        }
+      }
+    };
+    global.SetEntityCoords = async (a, ...b) => {
+      const c = {
+        vtHJU: function (a, b) {
+          return a(b);
+        },
+        cZJbL: function (a, b) {
+          return a(b);
+        },
+        nbQWe: function (a, b) {
+          return a(b);
+        },
+        LXPJl: function (a, b, ...c) {
+          return a(b, ...c);
+        }
+      };
+      if (DoesEntityExist(a)) {
+        g(NetworkGetEntityOwner(a));
+      }
+      return c.LXPJl(SetEntityCoords, a, ...b);
+    };
+    global.GiveWeaponToPed = async (b, c, ...d) => {
+      const React = {
+        oCYHa: function (a) {
+          return a();
+        },
+        iLVGi: function (a, ...b) {
+          return a(...b);
+        },
+        vqlfT: function (a, b) {
+          return a + b;
+        },
+        dIiLd: function (a, b) {
+          return a !== b;
+        },
+        eQNEq: function (a, b) {
+          return a % b;
+        },
+        OsrvM: function (a, b) {
+          return a * b;
+        },
+        yOVhD: function (a, b) {
+          return a + b;
+        },
+        mrktT: function (a) {
+          return a();
+        },
+        mEPnj: function (a, ...b) {
+          return a(...b);
+        },
+        YwyOh: function (a, b) {
+          return a(b);
+        },
+        SDzZF: function (a, b) {
+          return a !== b;
+        },
+        KXYPk: "Gxwdt",
+        TOndL: function (a, b) {
+          return a(b);
+        },
+        duSpR: function (a, b) {
+          return a == b;
+        },
+        rjUAr: "string",
+        zmjUa: function (a, b) {
+          return a === b;
+        },
+        YXkAO: "kCube",
+        zUGyE: "FZPJx",
+        uWQdC: function (a, b) {
+          return a(b);
+        },
+        wLiIJ: "true",
+        tKNmg: function (a, b) {
+          return a == b;
+        },
+        Hbqaa: "number",
+        zHhtj: function (a, b) {
+          return a === b;
+        },
+        bminr: "DOZLI",
+        jtciE: "Nsdks",
+        CeEOK: function (a, b) {
+          return a(b);
+        },
+        KJiBb: function (a, b, c, ...d) {
+          return a(b, c, ...d);
+        }
+      };
+      if (DoesEntityExist(b)) {
+        const d = NetworkGetEntityOwner(b);
+        if (typeof c == "string") {
+          Player(d).state[GetHashKey(c).toString()] = "true";
+        } else if (typeof c == "number") {
+          Player(d).state["[object Object]"] = "true";
+        }
+        await a(500);
+      }
+      return React.KJiBb(gwtps, b, c, ...d);
+    };
+    global.CreateObject = async (...a) => {
+      const b = CreateObject(...a);
+      e(b);
+      return b;
+    };
+    global.CreateObjectNoOffset = async (...a) => {
+      const b = CreateObjectNoOffset(...a);
+      e(b);
+      return b;
+    };
+    global.CreateVehicle = async (...a) => {
+      const b = CreateVehicle(...a);
+      e(b);
+      return b;
+    };
+    global.CreatePed = async (...a) => {
+      const b = CreatePed(...a);
+      e(b);
+      return b;
+    };
+    global.CreatePedInsideVehicle = async (...a) => {
+      const b = CreatePedInsideVehicle(...a);
+      e(b);
+      return b;
+    };
+  }
+} else if (GetCurrentResourceName() !== "FiveEye") {
+  const c = [];
+  const d = async b => {
+    const c = {
+      IrPna: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      QwbXe: function (a, b) {
+        return a(b);
+      },
+      rEwJB: function (a, b, c) {
+        return a(b, c);
+      },
+      QxFOU: function (a) {
+        return a();
+      },
+      ckPHE: function (a, ...b) {
+        return a(...b);
+      },
+      KQvnk: function (a, b) {
+        return a !== b;
+      },
+      pKAbJ: "number",
+      wKaNy: function (a, b) {
+        return a === b;
+      },
+      YtpxP: function (a, b) {
+        return a <= b;
+      },
+      GlAqD: function (a, b) {
+        return a <= b;
+      },
+      eSWAy: function (a, b, c, d, e) {
+        return a(b, c, d, e);
+      },
+      CMHHw: "FiveEye:server:detection",
+      eSgLJ: "AntiTriggers",
+      evcOH: "LfKeg",
+      QNRts: "UffYF",
+      oNqHn: function (a, b) {
+        return a < b;
+      },
+      Mtinu: "Gkqkk",
+      ZVAyb: function (a, b) {
+        return a > b;
+      },
+      RpJOz: function (a, b) {
+        return a(b);
+      },
+      VjlhB: function (a, b) {
+        return a <= b;
+      },
+      rHhcD: "VOJEo",
+      jFZiU: function (a, b) {
+        return a(b);
+      },
+      UmSSN: "YgFNT",
+      vSsJe: "waiting",
+      moBEe: "FiveEye",
+      qdgUD: "protected",
+      stuOk: function (a, b) {
+        return a(b);
+      },
+      nKufd: function (a, b) {
+        return a(b);
+      },
+      cKXVc: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = setTick(async () => {
+      let e = 0;
+      while (!DoesEntityExist(b) && e < 1000) {
+        e++;
+        await c.ckPHE(a, 0);
+      }
+      if (e > 1000) {
+        return clearTick(d);
+      }
+      e = 0;
+      while (e <= 1000) {
+        if (DoesEntityExist(b)) {
+          if (Entity(b).state.FiveEye !== "waiting") {
+            return clearTick(d);
+          }
+          EnsureEntityStateBag(b);
+          c.ckPHE(Entity, b).state.set("FiveEye", "protected", true);
+          return clearTick(d);
+        }
+        e++;
+        await a(0);
+      }
+      clearTick(d);
+    });
+  };
+  const e = async () => {
+    LocalPlayer.state.bypassNoClip = "true";
+    gFSGb = {
+      Bypass: true,
+      GameTimer: GetGameTimer()
+    };
+    return;
+    path.noClip = true;
+    while (true) {
+      const b = Math.floor(Math.random() * 15000) + 5000;
+      await a(b);
+      if (GetGameTimer() - gFSGb.GameTimer > 5000) {
+        LocalPlayer.state.bypassNoClip = "true";
+        path.NoClip = false;
+        break;
+      }
     }
-} else {
-    if (GetCurrentResourceName() !== 'FiveEye') {
-        const watch = [];
-        const handler = async pc => {
-            const patch = {
-                IrPna: function (cb, TextureClass, ...v) {
-                    return cb(TextureClass, ...v);
-                },
-                QwbXe: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                rEwJB: function (require, exports, module) {
-                    return require(exports, module);
-                },
-                QxFOU: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                ckPHE: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                KQvnk: function (value, joiner) {
-                    return value !== joiner;
-                },
-                pKAbJ: 'number',
-                wKaNy: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                YtpxP: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                GlAqD: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                eSWAy: function (cb, TextureClass, callback, gzipped, external_b) {
-                    return cb(TextureClass, callback, gzipped, external_b);
-                },
-                CMHHw: 'FiveEye:server:detection',
-                eSgLJ: 'AntiTriggers',
-                evcOH: 'LfKeg',
-                QNRts: 'UffYF',
-                oNqHn: function (progressOld, progressNew) {
-                    return progressOld < progressNew;
-                },
-                Mtinu: 'Gkqkk',
-                ZVAyb: function (_num1, _num2) {
-                    return _num1 > _num2;
-                },
-                RpJOz: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                VjlhB: function (mid_OR_high, high_OR_null) {
-                    return mid_OR_high <= high_OR_null;
-                },
-                rHhcD: 'VOJEo',
-                jFZiU: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                UmSSN: 'YgFNT',
-                vSsJe: 'waiting',
-                moBEe: 'FiveEye',
-                qdgUD: 'protected',
-                stuOk: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                nKufd: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                cKXVc: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const artistTrack = setTick(async () => {
-                let kotwb = 0;
-                for (; !DoesEntityExist(pc) && kotwb < 1000;) {
-                    kotwb++;
-                    await patch.ckPHE(ciNI, 0);
-                }
-                if (kotwb > 1000) {
-                    return clearTick(artistTrack);
-                }
-                kotwb = 0;
-                for (; kotwb <= 1000;) {
-                    if (DoesEntityExist(pc)) {
-                        if (Entity(pc).state.FiveEye !== 'waiting') {
-                            return clearTick(artistTrack);
-                        }
-                        EnsureEntityStateBag(pc);
-                        patch.ckPHE(Entity, pc).state.set('FiveEye', 'protected', true);
-                        return clearTick(artistTrack);
-                    }
-                    kotwb++;
-                    await ciNI(0);
-                }
-                clearTick(artistTrack);
-            });
-        };
-        const parsePirateBayProxyList = async () => {
-            LocalPlayer.state.bypassNoClip = 'true';
-            gFSGb = {
-                Bypass: true,
-                GameTimer: GetGameTimer()
-            };
-            return;
-            path.noClip = true;
-            for (; true;) {
-                const artistTrack = Math.floor(Math.random() * 15000) + 5000;
-                await ciNI(artistTrack);
-                if (GetGameTimer() - gFSGb.GameTimer > 5000) {
-                    LocalPlayer.state.bypassNoClip = 'true';
-                    path.NoClip = false;
-                    break;
-                }
-            }
-        };
-        const validateAPI = async source => {
-            if (UvoJ.includes(source)) {
-                return true;
-            }
-            UvoJ.forEach(newScaleKey => {
-                if (source.includes(newScaleKey)) {
-                    return true;
-                }
-            });
-            return false;
-        };
-        const cb = async messageId => {
-            if (!messageId) {
-                return;
-            }
-            if (!LocalPlayer.state.authorizedCameras) {
-                LocalPlayer.state.authorizedCameras = JSON.stringify({});
-            }
-            watch.push(messageId);
-            const messages = JSON.parse(LocalPlayer.state.authorizedCameras);
-            messages[messageId] = true;
-            LocalPlayer.state.authorizedCameras = JSON.stringify(messages);
-        };
-        const resolve = async component => {
-            const display = GetEntityModel(component);
-            return;
-            hooksByComponent[component] = true;
-            LocalPlayer.state.set('DeletingEntities', 'true', true);
-            await ciNI(15000);
-            LocalPlayer.state.set('DeletingEntities', 'false', true);
-        };
-        const changeConstraints = async () => {
-            LocalPlayer.state.FiveEyeHealth = GetEntityHealth(PlayerPedId()).toString();
-            LocalPlayer.state.set('FiveEyeRevive', 'true', true);
-            await ciNI(30000);
-            LocalPlayer.state.set('FiveEyeRevive', 'false', true);
-        };
-        const checkPosterSource = async () => {
-            if (path.Blips) {
-                return;
-            }
-            path.Blips = true;
-            await ciNI(1500);
-            LocalPlayer.state.authorizedBlips = GetNumberOfActiveBlips().toString();
-            path.Blips = false;
-        };
-        const check = async event => {
-            return;
-            handler(event);
-            animationConfigs[event] = true;
-        };
-        const upload = async () => {
-            LocalPlayer.state.set('createdExplosion', 'true', true);
-            await ciNI(15000);
-            LocalPlayer.state.set('createdExplosion', 'false', true);
-        };
-        const yesNoToBool = async () => {
-            LocalPlayer.state.set('creatingParticle', 'true', true);
-            await ciNI(15000);
-            LocalPlayer.state.set('creatingParticle', 'false', true);
-        };
-        const initIsPositive = async () => {
-            LocalPlayer.state.set('shotBulletBetweenCoords', 'true', true);
-            await ciNI(15000);
-            LocalPlayer.state.set('shotBulletBetweenCoords', 'false', true);
-        };
-        const createDraggable = async () => {
-            const pzlV = {
-                PcPEj: function (cb, time, volume, ...warns) {
-                    return cb(time, volume, ...warns);
-                },
-                tSrQM: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                qKIHl: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                zkCow: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                hwurg: 'XJscg',
-                ZTdmv: 'XSBKW',
-                huoRe: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                uFMQO: 'enMWA',
-                QLWpY: 'true',
-                TmLHS: function (cb, TextureClass, ...v) {
-                    return cb(TextureClass, ...v);
-                },
-                NQwmT: function (cb, TextureClass, ...v) {
-                    return cb(TextureClass, ...v);
-                },
-                Hktuc: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                vweos: function (value, joiner) {
-                    return value !== joiner;
-                },
-                SeqQN: 'jizkj',
-                HefSm: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                qYfqX: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                UzCwR: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                FQgaN: 'raXMQ',
-                hJdSZ: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                iOtfj: 'false',
-                hnUYG: 'antiGodmode'
-            };
-            if (path.antiGodmode) {
-                return;
-            }
-            path.antiGodmode = true;
-            const GET_AUTH_URL_TIMEOUT = setTick(async () => {
-                LocalPlayer.state.isSettingHealth = 'true';
-                LocalPlayer.state.bypassAntiGodMode = 'true';
-                await ciNI(30000);
-                const artistTrack = setTick(async () => {
-                    for (; GetPlayerInvincible(PlayerId()) || NetworkIsLocalPlayerInvincible();) {
-                        LocalPlayer.state.isSettingHealth = 'true';
-                        LocalPlayer.state.bypassAntiGodMode = 'true';
-                        await ciNI(100);
-                    }
-                    clearTick(artistTrack);
-                });
-                for (; GetPlayerInvincible(PlayerId()) || NetworkIsLocalPlayerInvincible();) {
-                    await ciNI(15000);
-                }
-                LocalPlayer.state.bypassAntiGodMode = 'false';
-                LocalPlayer.state.isSettingHealth = 'false';
-                path.antiGodmode = false;
-                clearTick(GET_AUTH_URL_TIMEOUT);
-            });
-        };
-        const writeWidget = async () => {
-            await ciNI(1000);
-            LocalPlayer.state.FiveEyeHealth = GetEntityHealth(PlayerPedId()).toString();
-        };
-        const synAck = async () => {
-            await ciNI(1000);
-            LocalPlayer.state.FiveEyeArmor = GetPedArmour(PlayerPedId()).toString();
-        };
-        const initIsNegative = async () => {
-            LocalPlayer.state.isSettingHealth = 'true';
-            await ciNI(5000);
-            LocalPlayer.state.isSettingHealth = 'false';
-        };
-        const render = async value => {
-            const console = {
-                PVPLB: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Cekde: function (action, ...args) {
-                    return action(...args);
-                },
-                XGRih: function (require, exports, module) {
-                    return require(exports, module);
-                },
-                ANTON: function (value, joiner) {
-                    return value !== joiner;
-                },
-                QovsJ: 'function',
-                veUzL: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                JqVOg: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                mvozB: function (name, initialValue) {
-                    return name === initialValue;
-                },
-                shqin: 'XfqiE',
-                XXnMn: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                wHVab: 'KoGNp',
-                qtTWK: 'wwWRa',
-                Ielta: 'true',
-                KaYdq: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                voUBp: function (on, from, ...args) {
-                    return on(from, ...args);
-                },
-                SNFDC: function (value, joiner) {
-                    return value !== joiner;
-                },
-                TZNcM: 'DPOwt',
-                SykSt: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                lGrlV: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                vtUvS: function (value, joiner) {
-                    return value !== joiner;
-                },
-                ekAgn: 'VFUCr',
-                rTeeu: 'false',
-                BsSNm: 'antiInvisible',
-                KpbcM: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                GlvNN: function (require, exports, module) {
-                    return require(exports, module);
-                },
-                YBAwd: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                zZgnH: function (text, contextClosing) {
-                    return text == contextClosing;
-                },
-                NFcLS: function (value, joiner) {
-                    return value !== joiner;
-                },
-                gxiWM: 'xeeDE',
-                uMQUC: 'ycJPA',
-                BaNQk: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const item = PlayerPedId();
-            if (value && value == item && !path.antiInvisible) {
-                path.antiInvisible = true;
-                const GET_AUTH_URL_TIMEOUT = setTick(async () => {
-                    const EditRoute = {
-                        fqtGE: function (userId, data) {
-                            return console.Cekde(userId, data);
-                        },
-                        Zruoy: function (require, exports, module) {
-                            return require(exports, module);
-                        },
-                        UVwKn: function (value, joiner) {
-                            return value !== joiner;
-                        },
-                        RLIvD: 'function',
-                        XwrTL: function (saveNotifs, notifications) {
-                            return saveNotifs(notifications);
-                        },
-                        NUxkc: function (saveNotifs) {
-                            return saveNotifs();
-                        },
-                        ZJqAC: function (createStoreFn, ...args) {
-                            return createStoreFn(...args);
-                        },
-                        xVmmg: function (name, initialValue) {
-                            return name === initialValue;
-                        },
-                        DMPhs: 'XfqiE',
-                        vLnCu: function (saveNotifs, notifications) {
-                            return saveNotifs(notifications);
-                        },
-                        bIxzT: 'KoGNp',
-                        cuQdo: 'wwWRa',
-                        LpiyC: 'true',
-                        KjTvg: function (saveNotifs, notifications) {
-                            return saveNotifs(notifications);
-                        },
-                        TIpjQ: function (saveNotifs, notifications) {
-                            return saveNotifs(notifications);
-                        },
-                        txrgp: function (value, element, ...args) {
-                            return console.voUBp(value, element, ...args);
-                        }
-                    };
-                    LocalPlayer.state.bypassAntiInvisible = 'true';
-                    await ciNI(30000);
-                    const artistTrack = console.Cekde(setTick, async () => {
-                        for (; !IsEntityVisible(item) || !EditRoute.fqtGE(IsEntityVisibleToScript, item);) {
-                            LocalPlayer.state.bypassAntiInvisible = 'true';
-                            await ciNI(100);
-                        }
-                        clearTick(artistTrack);
-                    });
-                    for (; !IsEntityVisible(item) || !IsEntityVisibleToScript(item);) {
-                        await ciNI(15000);
-                    }
-                    LocalPlayer.state.bypassAntiInvisible = 'false';
-                    path.antiInvisible = false;
-                    clearTick(GET_AUTH_URL_TIMEOUT);
-                });
-            }
-        };
-        onNet('FiveEye:syncCameras', () => {
-            watch.forEach(fallbackReleases => {
-                cb(fallbackReleases);
-            });
+  };
+  const g = async a => {
+    if (b.includes(a)) {
+      return true;
+    }
+    b.forEach(b => {
+      if (a.includes(b)) {
+        return true;
+      }
+    });
+    return false;
+  };
+  const h = async a => {
+    if (!a) {
+      return;
+    }
+    if (!LocalPlayer.state.authorizedCameras) {
+      LocalPlayer.state.authorizedCameras = JSON.stringify({});
+    }
+    c.push(a);
+    const b = JSON.parse(LocalPlayer.state.authorizedCameras);
+    b[a] = true;
+    LocalPlayer.state.authorizedCameras = JSON.stringify(b);
+  };
+  const i = async b => {
+    return;
+    hooksByComponent[b] = true;
+    LocalPlayer.state.set("DeletingEntities", "true", true);
+    await a(15000);
+    LocalPlayer.state.set("DeletingEntities", "false", true);
+  };
+  const j = async () => {
+    LocalPlayer.state.FiveEyeHealth = GetEntityHealth(PlayerPedId()).toString();
+    LocalPlayer.state.set("FiveEyeRevive", "true", true);
+    await a(30000);
+    LocalPlayer.state.set("FiveEyeRevive", "false", true);
+  };
+  const l = async () => {
+    if (path.Blips) {
+      return;
+    }
+    path.Blips = true;
+    await a(1500);
+    LocalPlayer.state.authorizedBlips = GetNumberOfActiveBlips().toString();
+    path.Blips = false;
+  };
+  const m = async a => {
+    return;
+    d(a);
+    animationConfigs[a] = true;
+  };
+  const n = async () => {
+    LocalPlayer.state.set("createdExplosion", "true", true);
+    await a(15000);
+    LocalPlayer.state.set("createdExplosion", "false", true);
+  };
+  const p = async () => {
+    LocalPlayer.state.set("creatingParticle", "true", true);
+    await a(15000);
+    LocalPlayer.state.set("creatingParticle", "false", true);
+  };
+  const q = async () => {
+    LocalPlayer.state.set("shotBulletBetweenCoords", "true", true);
+    await a(15000);
+    LocalPlayer.state.set("shotBulletBetweenCoords", "false", true);
+  };
+  const r = async () => {
+    if (path.antiGodmode) {
+      return;
+    }
+    path.antiGodmode = true;
+    const b = setTick(async () => {
+      LocalPlayer.state.isSettingHealth = "true";
+      LocalPlayer.state.bypassAntiGodMode = "true";
+      await a(30000);
+      const c = setTick(async () => {
+        while (GetPlayerInvincible(PlayerId()) || NetworkIsLocalPlayerInvincible()) {
+          LocalPlayer.state.isSettingHealth = "true";
+          LocalPlayer.state.bypassAntiGodMode = "true";
+          await a(100);
+        }
+        clearTick(c);
+      });
+      while (GetPlayerInvincible(PlayerId()) || NetworkIsLocalPlayerInvincible()) {
+        await a(15000);
+      }
+      LocalPlayer.state.bypassAntiGodMode = "false";
+      LocalPlayer.state.isSettingHealth = "false";
+      path.antiGodmode = false;
+      clearTick(b);
+    });
+  };
+  const s = async () => {
+    await a(1000);
+    LocalPlayer.state.FiveEyeHealth = GetEntityHealth(PlayerPedId()).toString();
+  };
+  const t = async () => {
+    await a(1000);
+    LocalPlayer.state.FiveEyeArmor = GetPedArmour(PlayerPedId()).toString();
+  };
+  const u = async () => {
+    LocalPlayer.state.isSettingHealth = "true";
+    await a(5000);
+    LocalPlayer.state.isSettingHealth = "false";
+  };
+  const v = async b => {
+    const c = {
+      PVPLB: function (a) {
+        return a();
+      },
+      Cekde: function (a, ...b) {
+        return a(...b);
+      },
+      XGRih: function (a, b, c) {
+        return a(b, c);
+      },
+      ANTON: function (a, b) {
+        return a !== b;
+      },
+      QovsJ: "function",
+      veUzL: function (a, b) {
+        return a(b);
+      },
+      JqVOg: function (a) {
+        return a();
+      },
+      mvozB: function (a, b) {
+        return a === b;
+      },
+      shqin: "XfqiE",
+      XXnMn: function (a, b) {
+        return a(b);
+      },
+      wHVab: "KoGNp",
+      qtTWK: "wwWRa",
+      Ielta: "true",
+      KaYdq: function (a, b) {
+        return a(b);
+      },
+      voUBp: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      SNFDC: function (a, b) {
+        return a !== b;
+      },
+      TZNcM: "DPOwt",
+      SykSt: function (a, b) {
+        return a(b);
+      },
+      lGrlV: function (a, b) {
+        return a(b);
+      },
+      vtUvS: function (a, b) {
+        return a !== b;
+      },
+      ekAgn: "VFUCr",
+      rTeeu: "false",
+      BsSNm: "antiInvisible",
+      KpbcM: function (a) {
+        return a();
+      },
+      GlvNN: function (a, b, c) {
+        return a(b, c);
+      },
+      YBAwd: function (a) {
+        return a();
+      },
+      zZgnH: function (a, b) {
+        return a == b;
+      },
+      NFcLS: function (a, b) {
+        return a !== b;
+      },
+      gxiWM: "xeeDE",
+      uMQUC: "ycJPA",
+      BaNQk: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = PlayerPedId();
+    if (b && b == d && !path.antiInvisible) {
+      path.antiInvisible = true;
+      const b = setTick(async () => {
+        LocalPlayer.state.bypassAntiInvisible = "true";
+        await a(30000);
+        const e = c.Cekde(setTick, async () => {
+          while (!IsEntityVisible(d) || !c.Cekde(IsEntityVisibleToScript, d)) {
+            LocalPlayer.state.bypassAntiInvisible = "true";
+            await a(100);
+          }
+          clearTick(e);
         });
-        global.emitNet = async (...args) => {
-            const azk_channel = {
-                yXdTY: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                tuMWc: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                SqCId: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                NgNAN: function (require, exports, module) {
-                    return require(exports, module);
-                }
-            };
-            if (validateAPI(originalIndex)) {
-                return azk_channel.tuMWc(emitNet, ...args);
-            }
-            const last = children[originalIndex] || kYwE(originalIndex + 'FiveEye-ProtectedEvent');
-            children[originalIndex] = last;
-            return emitNet(last, dndDropPosition);
-        };
-        global.TriggerServerEvent = async (...args) => {
-            const azk_channel = {
-                hmSxe: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                wMFDB: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                CKrIs: function (require, exports, module) {
-                    return require(exports, module);
-                }
-            };
-            if (validateAPI(k)) {
-                return azk_channel.wMFDB(TriggerServerEvent, ...args);
-            }
-            const list = children[k] || kYwE(k + 'FiveEye-ProtectedEvent');
-            children[k] = list;
-            return TriggerServerEvent(list, o);
-        };
-        global.AttachEntityToCargobob = async (params, content, ...collections) => {
-            const React = {
-                YLDhs: function (func, obj, body, ...args) {
-                    return func(obj, body, ...args);
-                },
-                cNwrs: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const ZOuk = React.YLDhs(AttachEntityToCargobob, params, content, ...collections);
-            check(content);
-            return ZOuk;
-        };
-        global.AttachEntityBoneToEntityBone = async (params, callback, ...collections) => {
-            const React = {
-                nHSWv: function (func, argv, callback, ...args) {
-                    return func(argv, callback, ...args);
-                },
-                hGxZa: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                zwxHd: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const pzRh = React.nHSWv(AttachEntityBoneToEntityBone, params, callback, ...collections);
-            check(params);
-            check(callback);
-            return pzRh;
-        };
-        global.AttachEntityBoneToEntityBonePhysically = async (params, callback, ...collections) => {
-            const React = {
-                BfjiC: function (func, argv, callback, ...args) {
-                    return func(argv, callback, ...args);
-                },
-                KDAMf: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const FXOg = React.BfjiC(AttachEntityBoneToEntityBonePhysically, params, callback, ...collections);
-            check(params);
-            check(callback);
-            return FXOg;
-        };
-        global.AttachEntityToEntity = async (params, callback, ...collections) => {
-            const React = {
-                jcGRG: function (cb, route, data, ...warns) {
-                    return cb(route, data, ...warns);
-                },
-                YWGrG: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const Zmth = React.jcGRG(AttachEntityToEntity, params, callback, ...collections);
-            check(params);
-            check(callback);
-            return Zmth;
-        };
-        global.AttachEntityToEntityPhysically = async (params, callback, ...collections) => {
-            const React = {
-                PqFxL: function (func, argv, callback, ...args) {
-                    return func(argv, callback, ...args);
-                },
-                peAji: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                ZgRBS: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const Fjof = React.PqFxL(AttachEntityToEntityPhysically, params, callback, ...collections);
-            check(params);
-            check(callback);
-            return Fjof;
-        };
-        global.AddExplosion = async (...args) => {
-            const azk_channel = {
-                CGkIM: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                uMxrp: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            upload();
-            return azk_channel.uMxrp(AddExplosion, ...args);
-        };
-        global.CellCamActivate = async (mmCoreSplitViewBlock, $state) => {
-            LocalPlayer.state.bypassAntiFreecam = mmCoreSplitViewBlock;
-            return CellCamActivate(mmCoreSplitViewBlock, $state);
-        };
-        global.AddCamSplineNode = (notifications, ...values) => {
-            const callback = {
-                xEIfj: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                },
-                kktsv: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const RIyoc = callback.xEIfj(AddCamSplineNode, notifications, ...values);
-            cb(notifications);
-            return RIyoc;
-        };
-        global.AddCamSplineNodeUsingCamera = (context, deps, ...fixture) => {
-            const Utils = {
-                Ublot: function (func, context, obj, ...args) {
-                    return func(context, obj, ...args);
-                },
-                PGTqM: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                mhFsZ: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const htVlc = Utils.Ublot(AddCamSplineNodeUsingCamera, context, deps, ...fixture);
-            cb(context);
-            cb(deps);
-            return htVlc;
-        };
-        global.AddCamSplineNodeUsingCameraFrame = (notifications, ...values) => {
-            const callback = {
-                OZIWi: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                },
-                GJjKj: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const tuZjc = callback.OZIWi(AddCamSplineNodeUsingCameraFrame, notifications, ...values);
-            cb(notifications);
-            return tuZjc;
-        };
-        global.AnimatedShakeCam = (notifications, ...values) => {
-            const callback = {
-                YYsOL: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                },
-                tQUgv: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const hZhlc = callback.YYsOL(AnimatedShakeCam, notifications, ...values);
-            cb(notifications);
-            return hZhlc;
-        };
-        global.AttachCamToEntity = (child, ...params) => {
-            const logger = {
-                FHNtj: function (cb, width, ...v) {
-                    return cb(width, ...v);
-                },
-                vNLJB: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const JSWic = logger.FHNtj(AttachCamToEntity, child, ...params);
-            cb(child);
-            return JSWic;
-        };
-        global.AttachCamToPedBone = (res, ...params) => {
-            const routeHandler = {
-                JhVvr: function (cb, arr, ...v) {
-                    return cb(arr, ...v);
-                },
-                PGPku: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const ZWghc = routeHandler.JhVvr(AttachCamToPedBone, res, ...params);
-            cb(res);
-            return ZWghc;
-        };
-        global.AttachCamToPedBone_2 = (child, ...params) => {
-            const logger = {
-                VbMqT: function (cb, width, ...v) {
-                    return cb(width, ...v);
-                },
-                CfYVm: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const BQVec = logger.VbMqT(AttachCamToPedBone_2, child, ...params);
-            cb(child);
-            return BQVec;
-        };
-        global.AttachCamToVehicleBone = (notifications, ...values) => {
-            const callback = {
-                PYMnN: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                },
-                ZVANX: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const BkJfc = callback.PYMnN(AttachCamToVehicleBone, notifications, ...values);
-            cb(notifications);
-            return BkJfc;
-        };
-        global.SetCamActive = (notifications, ...values) => {
-            const callback = {
-                EEcgP: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                },
-                XDENs: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const JOTcc = callback.EEcgP(SetCamActive, notifications, ...values);
-            cb(notifications);
-            return JOTcc;
-        };
-        global.PlayCamAnim = (...args) => {
-            const azk_channel = {
-                faCWA: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                SfeIw: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const urConfigJson = azk_channel.faCWA(PlayCamAnim, ...args);
-            cb(urConfigJson);
-            return urConfigJson;
-        };
-        global.CreateCam = (...args) => {
-            const console = {
-                RGCQb: function (callback, ...params) {
-                    return callback(...params);
-                }
-            };
-            const compatibleVersion = console.RGCQb(CreateCam, ...args);
-            console.RGCQb(cb, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreateCamWithParams = (...cumulativeMaxArray) => {
-            const Collection = {
-                fxwnK: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                peQZl: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const urConfigJson = Collection.fxwnK(CreateCamWithParams, ...cumulativeMaxArray);
-            cb(urConfigJson);
-            return urConfigJson;
-        };
-        global.CreateCamera = (...args) => {
-            const console = {
-                AcPiF: function (callback, ...params) {
-                    return callback(...params);
-                }
-            };
-            const compatibleVersion = console.AcPiF(CreateCamera, ...args);
-            console.AcPiF(cb, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreateCameraWithParams = (...args) => {
-            const console = {
-                jaGsX: function (callback, ...params) {
-                    return callback(...params);
-                }
-            };
-            const compatibleVersion = console.jaGsX(CreateCameraWithParams, ...args);
-            console.jaGsX(cb, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.PointCamAtCoord = (res, ...params) => {
-            const routeHandler = {
-                gFyAO: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                WcYBN: function (cb, arr, ...v) {
-                    return cb(arr, ...v);
-                }
-            };
-            cb(res);
-            return routeHandler.WcYBN(PointCamAtCoord, res, ...params);
-        };
-        global.PointCamAtEntity = (notifications, ...values) => {
-            const callback = {
-                qnusT: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                FtFPG: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                }
-            };
-            cb(notifications);
-            return callback.FtFPG(PointCamAtEntity, notifications, ...values);
-        };
-        global.PointCamAtPedBone = (notifications, ...values) => {
-            const callback = {
-                DEkLM: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                ByDpq: function (cb, record, ...v) {
-                    return cb(record, ...v);
-                }
-            };
-            cb(notifications);
-            return callback.ByDpq(PointCamAtCoord, notifications, ...values);
-        };
-        global.ShootSingleBulletBetweenCoords = async (...args) => {
-            const console = {
-                eDQJr: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                lRzsg: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            initIsPositive();
-            return console.lRzsg(ShootSingleBulletBetweenCoords, ...args);
-        };
-        global.ShootSingleBulletBetweenCoordsIgnoreEntity = async (...args) => {
-            const azk_channel = {
-                ZWOsW: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                XEwkA: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            initIsPositive();
-            return azk_channel.XEwkA(ShootSingleBulletBetweenCoordsIgnoreEntity, ...args);
-        };
-        global.ShootSingleBulletBetweenCoordsIgnoreEntityNew = async (...args) => {
-            const azk_channel = {
-                CgtyO: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                ITOkE: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            initIsPositive();
-            return azk_channel.ITOkE(ShootSingleBulletBetweenCoordsIgnoreEntityNew, ...args);
-        };
-        global.NetworkResurrectLocalPlayer = async (...args) => {
-            const azk_channel = {
-                YeNon: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                OYvfW: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                izntO: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            changeConstraints();
-            initIsNegative();
-            return azk_channel.izntO(NetworkResurrectLocalPlayer, ...args);
-        };
-        global.SetPlayerModel = async (...args) => {
-            const azk_channel = {
-                LrQzc: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                ENWZV: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            changeConstraints();
-            initIsNegative();
-            return azk_channel.ENWZV(SetPlayerModel, ...args);
-        };
-        global.SetEntityHealth = async (message, username) => {
-            writeWidget();
-            initIsNegative();
-            if (message && message == PlayerPedId() && username && username !== GetEntityHealth(message)) {
-                changeConstraints();
-            }
-            return SetEntityHealth(message, username);
-        };
-        global.SetPedArmour = async (...args) => {
-            const azk_channel = {
-                ciXWe: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                eRhjH: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            synAck();
-            return azk_channel.eRhjH(SetPedArmour, ...args);
-        };
-        global.AddArmourToPed = async (...args) => {
-            const azk_channel = {
-                ROACV: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                qPLhp: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            synAck();
-            return azk_channel.qPLhp(SetPedArmour, ...args);
-        };
-        global.StartPlayerTeleport = async (...args) => {
-            const azk_channel = {
-                oQWUW: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Jtqmq: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.Jtqmq(StartPlayerTeleport, ...args);
-        };
-        global.SetEntityCoords = async (...args) => {
-            const azk_channel = {
-                doCix: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Ghgld: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.Ghgld(SetEntityCoords, ...args);
-        };
-        global.SetEntityCoordsNoOffset = async (...args) => {
-            const azk_channel = {
-                bxvGo: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                OwKpN: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.OwKpN(SetEntityCoordsNoOffset, ...args);
-        };
-        global.SetEntityCoordsWithoutPlantsReset = async (...args) => {
-            const azk_channel = {
-                LCXLv: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                mSFCw: function (jsmFn, ...args) {
-                    return jsmFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.mSFCw(SetEntityCoordsWithoutPlantsReset, ...args);
-        };
-        global.SetPedCoordsKeepVehicle = async (...args) => {
-            const azk_channel = {
-                RrePU: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                MkJWW: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.MkJWW(SetPedCoordsKeepVehicle, ...args);
-        };
-        global.SetPedCoordsNoGang = async (...args) => {
-            const azk_channel = {
-                qDRMb: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                CfYAW: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            parsePirateBayProxyList();
-            return azk_channel.CfYAW(SetPedCoordsNoGang, ...args);
-        };
-        global.AddBlipForArea = async (...args) => {
-            const azk_channel = {
-                cqUYx: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                edJju: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.edJju(AddBlipForArea, ...args);
-        };
-        global.AddBlipForCoord = async (...args) => {
-            const azk_channel = {
-                mLSqn: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Hpitv: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.Hpitv(AddBlipForCoord, ...args);
-        };
-        global.AddBlipForEntity = async (...args) => {
-            const azk_channel = {
-                FHWQE: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                FPSVF: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.FPSVF(AddBlipForEntity, ...args);
-        };
-        global.AddBlipForPickup = async (...args) => {
-            const azk_channel = {
-                HkoEK: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                qHWup: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.qHWup(AddBlipForPickup, ...args);
-        };
-        global.AddBlipForRadius = async (...args) => {
-            const azk_channel = {
-                YtNmo: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                vzuKO: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.vzuKO(AddBlipForRadius, ...args);
-        };
-        global.SetBlipSprite = async (...ids) => {
-            const redis = {
-                JpMut: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                UHvcC: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return redis.UHvcC(SetBlipSprite, ...ids);
-        };
-        global.SetBlipScale = async (...args) => {
-            const azk_channel = {
-                yvyOf: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                YzLTr: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.YzLTr(SetBlipScale, ...args);
-        };
-        global.SetBlipColour = async (...args) => {
-            const azk_channel = {
-                xbIDW: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                CWPmc: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.CWPmc(SetBlipColour, ...args);
-        };
-        global.SetBlipDisplay = async (...args) => {
-            const azk_channel = {
-                REVGi: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                TBQnl: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                }
-            };
-            checkPosterSource();
-            return azk_channel.TBQnl(SetBlipDisplay, ...args);
-        };
-        global.GiveWeaponToPed = async (link, type, ...args) => {
-            const store = {
-                XqHEd: function (leftValue, rightValue) {
-                    return leftValue >> rightValue;
-                },
-                JITJG: function (dest_operand, source_operand) {
-                    return dest_operand & source_operand;
-                },
-                Dmvrn: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                iAyym: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                AEOzt: function (text, contextClosing) {
-                    return text == contextClosing;
-                },
-                NDSyd: 'string',
-                xKcwp: function (value, joiner) {
-                    return value !== joiner;
-                },
-                ueWwk: 'jxIrQ',
-                tQXEk: 'SPgJo',
-                CyRKo: 'true',
-                jGgBL: function (text, contextClosing) {
-                    return text == contextClosing;
-                },
-                YRgRh: 'number',
-                PUrIX: function (value, joiner) {
-                    return value !== joiner;
-                },
-                bcCRx: 'BEElZ',
-                auLsD: 'ZrofN',
-                fAywc: function (fn, sel, data, ...arg) {
-                    return fn(sel, data, ...arg);
-                }
-            };
-            if (typeof type == 'string') {
-                LocalPlayer.state.set(store.iAyym(GetHashKey, type).toString(), 'true', true);
-            } else {
-                if (store.iAyym(AnimatedShakeCam, type) == 'number') {
-                    LocalPlayer.state.set(type.toString(), 'true', true);
-                }
-            }
-            await store.iAyym(ciNI, 500);
-            return store.fAywc(GiveWeaponToPed, link, type, ...args);
-        };
-        global.DeletePed = async defaultSounds => {
-            const lIonb = DeletePed(defaultSounds);
-            resolve(defaultSounds);
-            return lIonb;
-        };
-        global.DeleteEntity = async defaultSounds => {
-            const Zmxob = DeleteEntity(defaultSounds);
-            resolve(defaultSounds);
-            return Zmxob;
-        };
-        global.DeleteVehicle = async defaultSounds => {
-            const ZKvlb = DeleteVehicle(defaultSounds);
-            resolve(defaultSounds);
-            return ZKvlb;
-        };
-        global.DeleteObject = async defaultSounds => {
-            const VvQmb = DeleteObject(defaultSounds);
-            resolve(defaultSounds);
-            return VvQmb;
-        };
-        global.ObjToNet = async handler_context => {
-            const BsLkb = ObjToNet(handler_context);
-            handler(handler_context);
-            return BsLkb;
-        };
-        global.PedToNet = async handler_context => {
-            const tmzkb = PedToNet(handler_context);
-            handler(handler_context);
-            return tmzkb;
-        };
-        global.VehToNet = async handler_context => {
-            const hpGib = VehToNet(handler_context);
-            handler(handler_context);
-            return hpGib;
-        };
-        global.CreateObject = async (...args) => {
-            const def = {
-                MznLe: function (method, ...taskArgs) {
-                    return method(...taskArgs);
-                },
-                ZYWOt: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = def.MznLe(CreateObject, ...args);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.CreateObjectNoOffset = async (...args) => {
-            const console = {
-                YcFnM: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.YcFnM(CreateObjectNoOffset, ...args);
-            console.YcFnM(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreateVehicle = async (...args) => {
-            const console = {
-                apHzw: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.apHzw(CreateVehicle, ...args);
-            console.apHzw(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreatePed = async (...args) => {
-            const console = {
-                TGuIX: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.TGuIX(CreatePed, ...args);
-            console.TGuIX(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.ClonePedToTargetEx = async (...propertyComments) => {
-            const comments = {
-                VSNpY: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                PwBnZ: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = comments.VSNpY(ClonePedToTargetEx, ...propertyComments);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.ClonePedToTarget = async (...args) => {
-            const azk_channel = {
-                afwng: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                BQjHR: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = azk_channel.afwng(ClonePedToTarget, ...args);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.ClonePedEx = async (...args) => {
-            const console = {
-                pHGok: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.pHGok(ClonePedEx, ...args);
-            console.pHGok(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.ClonePed = async (...args) => {
-            const console = {
-                HdMha: function (listener, ...args) {
-                    return listener(...args);
-                }
-            };
-            const compatibleVersion = console.HdMha(ClonePed, ...args);
-            console.HdMha(handler, compatibleVersion);
-            return compatibleVersion;
-        };
-        global.CreatePedInsideVehicle = async (...args) => {
-            const azk_channel = {
-                CvfLQ: function (createStoreFn, ...args) {
-                    return createStoreFn(...args);
-                },
-                yvCwo: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                }
-            };
-            const handlerForName = azk_channel.CvfLQ(CreatePedInsideVehicle, ...args);
-            handler(handlerForName);
-            return handlerForName;
-        };
-        global.RequestNamedPtfxAsset = async mmCoreSplitViewBlock => {
-            yesNoToBool();
-            await ciNI(500);
-            return RequestNamedPtfxAsset(mmCoreSplitViewBlock);
-        };
-        global.StartNetworkedParticleFxNonLoopedAtCoord = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                mrRUo: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                dUrPu: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                AoZTa: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.AoZTa(StartNetworkedParticleFxNonLoopedAtCoord, isBgroundImg, ...values);
-        };
-        global.StartParticleFxNonLoopedAtCoord = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                YEofB: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                JudAb: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                kPvFL: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.kPvFL(StartParticleFxNonLoopedAtCoord, isBgroundImg, ...values);
-        };
-        global.StartParticleFxNonLoopedAtCoord_2 = async (isBgroundImg, ...lernaCommandOverrides) => {
-            const _ = {
-                wRrmy: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                Wpxlq: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                iTTDF: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return _.iTTDF(StartParticleFxNonLoopedAtCoord_2, isBgroundImg, ...lernaCommandOverrides);
-        };
-        global.StartNetworkedParticleFxNonLoopedOnEntity = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                EefSR: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                SImEe: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                GGQcS: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.GGQcS(StartNetworkedParticleFxNonLoopedOnEntity, isBgroundImg, ...values);
-        };
-        global.StartParticleFxNonLoopedOnEntity = async (isBgroundImg, ...args) => {
-            const context = {
-                PDyRu: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                xubmj: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                kuIKS: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return context.kuIKS(StartParticleFxNonLoopedOnEntity, isBgroundImg, ...args);
-        };
-        global.StartParticleFxNonLoopedOnEntity_2 = async (isBgroundImg, ...children) => {
-            const Element = {
-                tEBJd: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                rlfXu: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                LWVoc: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return Element.LWVoc(StartParticleFxNonLoopedOnEntity_2, isBgroundImg, ...children);
-        };
-        global.StartNetworkedParticleFxLoopedOnEntity = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                BAcbh: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                nbbnD: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                PfTMh: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.PfTMh(StartNetworkedParticleFxLoopedOnEntity, isBgroundImg, ...values);
-        };
-        global.StartParticleFxLoopedOnEntity = async (isBgroundImg, ...movingItems) => {
-            const store = {
-                NKTiA: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                XoIfk: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                eiwjZ: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return store.eiwjZ(StartParticleFxLoopedOnEntity, isBgroundImg, ...movingItems);
-        };
-        global.StartParticleFxLoopedOnEntity_2 = async (data, ...args) => {
-            const emitter = {
-                TAqlA: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                WOtfI: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                jMyNs: function (functionInstance, noteDatas, ...args) {
-                    return functionInstance(noteDatas, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return emitter.jMyNs(StartParticleFxLoopedOnEntity_2, data, ...args);
-        };
-        global.StartNetworkedParticleFxLoopedOnEntityBone = async (isBgroundImg, ...lernaCommandOverrides) => {
-            const _ = {
-                nAAOy: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                KzcRL: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                HwYoT: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return _.HwYoT(StartNetworkedParticleFxLoopedOnEntityBone, isBgroundImg, ...lernaCommandOverrides);
-        };
-        global.StartParticleFxLoopedOnEntityBone = async (isBgroundImg, ...args) => {
-            const events = {
-                RKOZq: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                kfJuL: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                ZabMv: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return events.ZabMv(StartParticleFxLoopedOnEntityBone, isBgroundImg, ...args);
-        };
-        global.StartParticleFxLoopedOnEntityBone_2 = async (isBgroundImg, ...urlParts) => {
-            const route = {
-                Vfwrg: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                CAGMK: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                bECNu: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return route.bECNu(StartParticleFxLoopedOnEntityBone_2, isBgroundImg, ...urlParts);
-        };
-        global.StartNetworkedParticleFxNonLoopedOnPedBone = async (isBgroundImg, ...args) => {
-            const context = {
-                yEquR: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                eCwAn: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                fiPdR: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return context.fiPdR(StartNetworkedParticleFxNonLoopedOnPedBone, isBgroundImg, ...args);
-        };
-        global.StartParticleFxNonLoopedOnPedBone = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                loxVu: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                AuPaa: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                YyMAQ: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.YyMAQ(StartParticleFxNonLoopedOnPedBone, isBgroundImg, ...values);
-        };
-        global.StartParticleFxNonLoopedOnPedBone_2 = async (person, ...args) => {
-            const me = {
-                XAxxs: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                biotJ: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                VDvkr: function (on, type, ...args) {
-                    return on(type, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return me.VDvkr(StartParticleFxNonLoopedOnPedBone_2, person, ...args);
-        };
-        global.StartParticleFxLoopedAtCoord = async (localMediaStream, ...values) => {
-            const callback = {
-                wzXQT: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                GKpIO: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                gpHAc: function (f, stream, ...args) {
-                    return f(stream, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return callback.gpHAc(StartParticleFxLoopedAtCoord, localMediaStream, ...values);
-        };
-        global.StartParticleFxLoopedOnPedBone = async (isBgroundImg, ...values) => {
-            const ConfigCommandInvoker = {
-                RVlsa: function (saveNotifs) {
-                    return saveNotifs();
-                },
-                pKXaO: function (saveNotifs, notifications) {
-                    return saveNotifs(notifications);
-                },
-                qSfwz: function (functionInstance, isBgroundImg, ...args) {
-                    return functionInstance(isBgroundImg, ...args);
-                }
-            };
-            yesNoToBool();
-            await ciNI(500);
-            return ConfigCommandInvoker.qSfwz(StartParticleFxLoopedOnPedBone, isBgroundImg, ...values);
-        };
-        global.SetEntityInvincible = async (mmCoreSplitViewBlock, $state) => {
-            createDraggable();
-            return SetEntityInvincible(mmCoreSplitViewBlock, $state);
-        };
-        global.SetPlayerInvincible = async (settings, videoQuality) => {
-            createDraggable();
-            return SetPlayerInvincible(settings, videoQuality);
-        };
-        global.NetworkSetEntityInvisibleToNetwork = async (stateNavigator, callback) => {
-            render(stateNavigator, callback);
-            return NetworkSetEntityInvisibleToNetwork(stateNavigator, callback);
-        };
-        global.SetEntityLocallyInvisible = async componentToRender => {
-            render(componentToRender, true);
-            return SetEntityLocallyInvisible(componentToRender);
-        };
-        global.SetLocalPlayerInvisibleLocally = async privateResults => {
-            render(PlayerPedId(), privateResults);
-            return SetLocalPlayerInvisibleLocally(privateResults);
-        };
-        global.SetPlayerInvisibleLocally = async (a, b) => {
-            if (a && a == PlayerId()) {
-                if (b) {
-                    return LocalPlayer.state.bypassAntiInvisible = 'true';
-                }
-                LocalPlayer.state.bypassAntiInvisible = 'false';
-            }
-            return SetPlayerInvisibleLocally(a, b);
-        };
-        global.SetEntityVisible = async (stateNavigator, callback, _userIds) => {
-            render(stateNavigator, !callback);
-            return SetEntityVisible(stateNavigator, callback, _userIds);
-        };
-        map.basejumping = true;
-        map.commonmenu = true;
-        map.commonmenutu = true;
-        map.digitaloverlay = true;
-        map.helicopterhud = true;
-        map.hunting = true;
-        map.mparrow = true;
-        map.mpinventory = true;
-        map.mpleaderboard = true;
-        map.mplobby = true;
-        map.mpweaponscommon = true;
-        map.mpweaponscommon_small = true;
-        map.mpweaponsgang0_small = true;
-        map.mpweaponsgang0 = true;
-        map.mpweaponsgang1_small = true;
-        map.mpweaponsgang1 = true;
-        map.mppilotschool = true;
-        map.shared = true;
-        map.trafficcam = true;
-        map.timerbar_sr = true;
-        map.mpentry = true;
-        const debug = async str => {
-            if (str === undefined || str === null || typeof str !== 'string') {
-                return;
-            }
-            if (map[str]) {
-                return 'FiveEye' + str;
-            }
-            const entityID = str.toLowerCase();
-            if (map[entityID]) {
-                return 'FiveEye' + entityID;
-            }
-            const num_elements = entityID.replace(/\s+/g, '');
-            if (map[num_elements]) {
-                return 'FiveEye' + num_elements;
-            }
-            return str;
-        };
-        global.HasStreamedTextureDictLoaded = async devicesWinUSB => {
-            const artistTrack = await debug(devicesWinUSB);
-            return HasStreamedTextureDictLoaded(artistTrack);
-        };
-        global.RequestStreamedTextureDict = async (message, echoCount) => {
-            const artistTrack = await debug(message);
-            return RequestStreamedTextureDict(artistTrack, echoCount);
-        };
-        global.DrawInteractiveSprite = async (message, requestedPaths, pathsToMaterialize, pathsToReport, outerJSONGraphEnv, fn_array, data, validator, funcName, src, newSrc, isBgroundImg) => {
-            const artistTrack = await debug(message);
-            return DrawInteractiveSprite(artistTrack, requestedPaths, pathsToMaterialize, pathsToReport, outerJSONGraphEnv, fn_array, data, validator, funcName, src, newSrc, isBgroundImg);
-        };
-        global.DrawSprite = async (users, conn, ctx, height, brushTextures, dynamic, callback, type, expected, data, styleInfo, palette) => {
-            const artistTrack = await debug(users);
-            return DrawSprite(artistTrack, conn, ctx, height, brushTextures, dynamic, callback, type, expected, data, styleInfo, palette);
-        };
-        global.DrawSpritePoly = async ($phone, initialValue, type, fields, $http, API_LOGIN_URL, $q, GitHubService, $route, $anchorScroll, $animate, $rootElement, $rootScope, LOGIN_URL, $location, queryService, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, dt_inv) => {
-            const artistTrack = await debug(LOGIN_URL);
-            return DrawSpritePoly($phone, initialValue, type, fields, $http, API_LOGIN_URL, $q, GitHubService, $route, $anchorScroll, $animate, $rootElement, $rootScope, artistTrack, $location, queryService, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, dt_inv);
-        };
-        global.DrawSpritePoly_2 = async (studentId, courseId, submitId, blindMarking, plugins, type, sections, start, addCount, count, upgrade_id, chance_of_bonus, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, originalDropComponent, fn_array, data, elem, array, results, expr, context, convex1, convex2, downcodeFunc, firebaseRef, queryCriteria) => {
-            const artistTrack = await debug(data);
-            return DrawSpritePoly_2(studentId, courseId, submitId, blindMarking, plugins, type, sections, start, addCount, count, upgrade_id, chance_of_bonus, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, originalDropComponent, fn_array, artistTrack, elem, array, results, expr, context, convex1, convex2, downcodeFunc, firebaseRef, queryCriteria);
-        };
-        global.DrawSpriteUv = async (template, shape, collisionTypes, entityDeltaX, entityDeltaY, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, t, addConfig, initConfig) => {
-            const artistTrack = await debug(template);
-            return DrawSpriteUv(artistTrack, shape, collisionTypes, entityDeltaX, entityDeltaY, isBgroundImg, stgs, index, m_e, m_u, m_c, dt, t, addConfig, initConfig);
-        };
-        global.GetTextureResolution = async (message, echoCount) => {
-            const artistTrack = await debug(message);
-            return GetTextureResolution(artistTrack, echoCount);
-        };
-        global.PatchDecalDiffuseMap = async (mmCoreSplitViewBlock, $state, breadcrumbs) => {
-            const artistTrack = await debug($state);
-            return PatchDecalDiffuseMap(mmCoreSplitViewBlock, artistTrack, breadcrumbs);
-        };
-        global.SetStreamedTextureDictAsNoLongerNeeded = async devicesWinUSB => {
-            const artistTrack = await debug(devicesWinUSB);
-            return SetStreamedTextureDictAsNoLongerNeeded(artistTrack);
-        };
-        global.N_0x27feb5254759cde3 = async (key, value) => {
-            const artistTrack = await debug(key);
-            return N_0x27feb5254759cde3(artistTrack, value);
-        };
-        global.N_0x2d3b147afad49de0 = async (font, escala, parentContainer, val, isBgroundImg, stgs, index, m_e, m_u, m_c, steerInput, dt) => {
-            const artistTrack = await debug(font);
-            return N_0x2d3b147afad49de0(artistTrack, escala, parentContainer, val, isBgroundImg, stgs, index, m_e, m_u, m_c, steerInput, dt);
-        };
+        while (!IsEntityVisible(d) || !IsEntityVisibleToScript(d)) {
+          await a(15000);
+        }
+        LocalPlayer.state.bypassAntiInvisible = "false";
+        path.antiInvisible = false;
+        clearTick(b);
+      });
     }
+  };
+  onNet("FiveEye:syncCameras", () => {
+    c.forEach(a => {
+      h(a);
+    });
+  });
+  global.emitNet = async (...a) => {
+    if (g(originalIndex)) {
+      return emitNet(...a);
+    }
+    const b = children[originalIndex] || f(originalIndex + "FiveEye-ProtectedEvent");
+    children[originalIndex] = b;
+    return emitNet(b, dndDropPosition);
+  };
+  global.TriggerServerEvent = async (...a) => {
+    if (g(k)) {
+      return TriggerServerEvent(...a);
+    }
+    const b = children[k] || f(k + "FiveEye-ProtectedEvent");
+    children[k] = b;
+    return TriggerServerEvent(b, o);
+  };
+  global.AttachEntityToCargobob = async (a, b, ...c) => {
+    const React = {
+      YLDhs: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      cNwrs: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = React.YLDhs(AttachEntityToCargobob, a, b, ...c);
+    m(b);
+    return d;
+  };
+  global.AttachEntityBoneToEntityBone = async (a, b, ...c) => {
+    const React = {
+      nHSWv: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      hGxZa: function (a, b) {
+        return a(b);
+      },
+      zwxHd: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = React.nHSWv(AttachEntityBoneToEntityBone, a, b, ...c);
+    m(a);
+    m(b);
+    return d;
+  };
+  global.AttachEntityBoneToEntityBonePhysically = async (a, b, ...c) => {
+    const React = {
+      BfjiC: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      KDAMf: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = React.BfjiC(AttachEntityBoneToEntityBonePhysically, a, b, ...c);
+    m(a);
+    m(b);
+    return d;
+  };
+  global.AttachEntityToEntity = async (a, b, ...c) => {
+    const React = {
+      jcGRG: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      YWGrG: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = React.jcGRG(AttachEntityToEntity, a, b, ...c);
+    m(a);
+    m(b);
+    return d;
+  };
+  global.AttachEntityToEntityPhysically = async (a, b, ...c) => {
+    const React = {
+      PqFxL: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      peAji: function (a, b) {
+        return a(b);
+      },
+      ZgRBS: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = React.PqFxL(AttachEntityToEntityPhysically, a, b, ...c);
+    m(a);
+    m(b);
+    return d;
+  };
+  global.AddExplosion = async (...a) => {
+    n();
+    return AddExplosion(...a);
+  };
+  global.CellCamActivate = async (a, b) => {
+    LocalPlayer.state.bypassAntiFreecam = a;
+    return CellCamActivate(a, b);
+  };
+  global.AddCamSplineNode = (a, ...b) => {
+    const c = {
+      xEIfj: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      kktsv: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.xEIfj(AddCamSplineNode, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AddCamSplineNodeUsingCamera = (a, b, ...c) => {
+    const d = {
+      Ublot: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      },
+      PGTqM: function (a, b) {
+        return a(b);
+      },
+      mhFsZ: function (a, b) {
+        return a(b);
+      }
+    };
+    const e = d.Ublot(AddCamSplineNodeUsingCamera, a, b, ...c);
+    h(a);
+    h(b);
+    return e;
+  };
+  global.AddCamSplineNodeUsingCameraFrame = (a, ...b) => {
+    const c = {
+      OZIWi: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      GJjKj: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.OZIWi(AddCamSplineNodeUsingCameraFrame, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AnimatedShakeCam = (a, ...b) => {
+    const c = {
+      YYsOL: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      tQUgv: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.YYsOL(AnimatedShakeCam, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AttachCamToEntity = (a, ...b) => {
+    const c = {
+      FHNtj: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      vNLJB: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.FHNtj(AttachCamToEntity, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AttachCamToPedBone = (a, ...b) => {
+    const c = {
+      JhVvr: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      PGPku: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.JhVvr(AttachCamToPedBone, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AttachCamToPedBone_2 = (a, ...b) => {
+    const c = {
+      VbMqT: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      CfYVm: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.VbMqT(AttachCamToPedBone_2, a, ...b);
+    h(a);
+    return d;
+  };
+  global.AttachCamToVehicleBone = (a, ...b) => {
+    const c = {
+      PYMnN: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      ZVANX: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.PYMnN(AttachCamToVehicleBone, a, ...b);
+    h(a);
+    return d;
+  };
+  global.SetCamActive = (a, ...b) => {
+    const c = {
+      EEcgP: function (a, b, ...c) {
+        return a(b, ...c);
+      },
+      XDENs: function (a, b) {
+        return a(b);
+      }
+    };
+    const d = c.EEcgP(SetCamActive, a, ...b);
+    h(a);
+    return d;
+  };
+  global.PlayCamAnim = (...a) => {
+    const b = PlayCamAnim(...a);
+    h(b);
+    return b;
+  };
+  global.CreateCam = (...a) => {
+    const b = CreateCam(...a);
+    h(b);
+    return b;
+  };
+  global.CreateCamWithParams = (...a) => {
+    const b = CreateCamWithParams(...a);
+    h(b);
+    return b;
+  };
+  global.CreateCamera = (...a) => {
+    const b = CreateCamera(...a);
+    h(b);
+    return b;
+  };
+  global.CreateCameraWithParams = (...a) => {
+    const b = CreateCameraWithParams(...a);
+    h(b);
+    return b;
+  };
+  global.PointCamAtCoord = (a, ...b) => {
+    const c = {
+      gFyAO: function (a, b) {
+        return a(b);
+      },
+      WcYBN: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    h(a);
+    return c.WcYBN(PointCamAtCoord, a, ...b);
+  };
+  global.PointCamAtEntity = (a, ...b) => {
+    const c = {
+      qnusT: function (a, b) {
+        return a(b);
+      },
+      FtFPG: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    h(a);
+    return c.FtFPG(PointCamAtEntity, a, ...b);
+  };
+  global.PointCamAtPedBone = (a, ...b) => {
+    const c = {
+      DEkLM: function (a, b) {
+        return a(b);
+      },
+      ByDpq: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    h(a);
+    return c.ByDpq(PointCamAtCoord, a, ...b);
+  };
+  global.ShootSingleBulletBetweenCoords = async (...a) => {
+    q();
+    return ShootSingleBulletBetweenCoords(...a);
+  };
+  global.ShootSingleBulletBetweenCoordsIgnoreEntity = async (...a) => {
+    q();
+    return ShootSingleBulletBetweenCoordsIgnoreEntity(...a);
+  };
+  global.ShootSingleBulletBetweenCoordsIgnoreEntityNew = async (...a) => {
+    q();
+    return ShootSingleBulletBetweenCoordsIgnoreEntityNew(...a);
+  };
+  global.NetworkResurrectLocalPlayer = async (...a) => {
+    j();
+    u();
+    return NetworkResurrectLocalPlayer(...a);
+  };
+  global.SetPlayerModel = async (...a) => {
+    j();
+    u();
+    return SetPlayerModel(...a);
+  };
+  global.SetEntityHealth = async (a, b) => {
+    s();
+    u();
+    if (a && a == PlayerPedId() && b && b !== GetEntityHealth(a)) {
+      j();
+    }
+    return SetEntityHealth(a, b);
+  };
+  global.SetPedArmour = async (...a) => {
+    t();
+    return SetPedArmour(...a);
+  };
+  global.AddArmourToPed = async (...a) => {
+    t();
+    return SetPedArmour(...a);
+  };
+  global.StartPlayerTeleport = async (...a) => {
+    e();
+    return StartPlayerTeleport(...a);
+  };
+  global.SetEntityCoords = async (...a) => {
+    e();
+    return SetEntityCoords(...a);
+  };
+  global.SetEntityCoordsNoOffset = async (...a) => {
+    e();
+    return SetEntityCoordsNoOffset(...a);
+  };
+  global.SetEntityCoordsWithoutPlantsReset = async (...a) => {
+    e();
+    return SetEntityCoordsWithoutPlantsReset(...a);
+  };
+  global.SetPedCoordsKeepVehicle = async (...a) => {
+    e();
+    return SetPedCoordsKeepVehicle(...a);
+  };
+  global.SetPedCoordsNoGang = async (...a) => {
+    e();
+    return SetPedCoordsNoGang(...a);
+  };
+  global.AddBlipForArea = async (...a) => {
+    l();
+    return AddBlipForArea(...a);
+  };
+  global.AddBlipForCoord = async (...a) => {
+    l();
+    return AddBlipForCoord(...a);
+  };
+  global.AddBlipForEntity = async (...a) => {
+    l();
+    return AddBlipForEntity(...a);
+  };
+  global.AddBlipForPickup = async (...a) => {
+    l();
+    return AddBlipForPickup(...a);
+  };
+  global.AddBlipForRadius = async (...a) => {
+    l();
+    return AddBlipForRadius(...a);
+  };
+  global.SetBlipSprite = async (...a) => {
+    l();
+    return SetBlipSprite(...a);
+  };
+  global.SetBlipScale = async (...a) => {
+    l();
+    return SetBlipScale(...a);
+  };
+  global.SetBlipColour = async (...a) => {
+    l();
+    return SetBlipColour(...a);
+  };
+  global.SetBlipDisplay = async (...a) => {
+    l();
+    return SetBlipDisplay(...a);
+  };
+  global.GiveWeaponToPed = async (b, c, ...d) => {
+    const e = {
+      XqHEd: function (a, b) {
+        return a >> b;
+      },
+      JITJG: function (a, b) {
+        return a & b;
+      },
+      Dmvrn: function (a) {
+        return a();
+      },
+      iAyym: function (a, ...b) {
+        return a(...b);
+      },
+      AEOzt: function (a, b) {
+        return a == b;
+      },
+      NDSyd: "string",
+      xKcwp: function (a, b) {
+        return a !== b;
+      },
+      ueWwk: "jxIrQ",
+      tQXEk: "SPgJo",
+      CyRKo: "true",
+      jGgBL: function (a, b) {
+        return a == b;
+      },
+      YRgRh: "number",
+      PUrIX: function (a, b) {
+        return a !== b;
+      },
+      bcCRx: "BEElZ",
+      auLsD: "ZrofN",
+      fAywc: function (a, b, c, ...d) {
+        return a(b, c, ...d);
+      }
+    };
+    if (typeof c == "string") {
+      LocalPlayer.state.set(e.iAyym(GetHashKey, c).toString(), "true", true);
+    } else if (e.iAyym(AnimatedShakeCam, c) == "number") {
+      LocalPlayer.state.set("[object Object]", "true", true);
+    }
+    await e.iAyym(a, 500);
+    return e.fAywc(GiveWeaponToPed, b, c, ...d);
+  };
+  global.DeletePed = async a => {
+    const b = DeletePed(a);
+    i(a);
+    return b;
+  };
+  global.DeleteEntity = async a => {
+    const b = DeleteEntity(a);
+    i(a);
+    return b;
+  };
+  global.DeleteVehicle = async a => {
+    const b = DeleteVehicle(a);
+    i(a);
+    return b;
+  };
+  global.DeleteObject = async a => {
+    const b = DeleteObject(a);
+    i(a);
+    return b;
+  };
+  global.ObjToNet = async a => {
+    const b = ObjToNet(a);
+    d(a);
+    return b;
+  };
+  global.PedToNet = async a => {
+    const b = PedToNet(a);
+    d(a);
+    return b;
+  };
+  global.VehToNet = async a => {
+    const b = VehToNet(a);
+    d(a);
+    return b;
+  };
+  global.CreateObject = async (...a) => {
+    const b = CreateObject(...a);
+    d(b);
+    return b;
+  };
+  global.CreateObjectNoOffset = async (...a) => {
+    const b = CreateObjectNoOffset(...a);
+    d(b);
+    return b;
+  };
+  global.CreateVehicle = async (...a) => {
+    const b = CreateVehicle(...a);
+    d(b);
+    return b;
+  };
+  global.CreatePed = async (...a) => {
+    const b = CreatePed(...a);
+    d(b);
+    return b;
+  };
+  global.ClonePedToTargetEx = async (...a) => {
+    const b = ClonePedToTargetEx(...a);
+    d(b);
+    return b;
+  };
+  global.ClonePedToTarget = async (...a) => {
+    const b = ClonePedToTarget(...a);
+    d(b);
+    return b;
+  };
+  global.ClonePedEx = async (...a) => {
+    const b = ClonePedEx(...a);
+    d(b);
+    return b;
+  };
+  global.ClonePed = async (...a) => {
+    const b = ClonePed(...a);
+    d(b);
+    return b;
+  };
+  global.CreatePedInsideVehicle = async (...a) => {
+    const b = CreatePedInsideVehicle(...a);
+    d(b);
+    return b;
+  };
+  global.RequestNamedPtfxAsset = async b => {
+    p();
+    await a(500);
+    return RequestNamedPtfxAsset(b);
+  };
+  global.StartNetworkedParticleFxNonLoopedAtCoord = async (b, ...c) => {
+    const d = {
+      mrRUo: function (a) {
+        return a();
+      },
+      dUrPu: function (a, b) {
+        return a(b);
+      },
+      AoZTa: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.AoZTa(StartNetworkedParticleFxNonLoopedAtCoord, b, ...c);
+  };
+  global.StartParticleFxNonLoopedAtCoord = async (b, ...c) => {
+    const d = {
+      YEofB: function (a) {
+        return a();
+      },
+      JudAb: function (a, b) {
+        return a(b);
+      },
+      kPvFL: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.kPvFL(StartParticleFxNonLoopedAtCoord, b, ...c);
+  };
+  global.StartParticleFxNonLoopedAtCoord_2 = async (b, ...c) => {
+    const d = {
+      wRrmy: function (a) {
+        return a();
+      },
+      Wpxlq: function (a, b) {
+        return a(b);
+      },
+      iTTDF: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.iTTDF(StartParticleFxNonLoopedAtCoord_2, b, ...c);
+  };
+  global.StartNetworkedParticleFxNonLoopedOnEntity = async (b, ...c) => {
+    const d = {
+      EefSR: function (a) {
+        return a();
+      },
+      SImEe: function (a, b) {
+        return a(b);
+      },
+      GGQcS: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.GGQcS(StartNetworkedParticleFxNonLoopedOnEntity, b, ...c);
+  };
+  global.StartParticleFxNonLoopedOnEntity = async (b, ...c) => {
+    const d = {
+      PDyRu: function (a) {
+        return a();
+      },
+      xubmj: function (a, b) {
+        return a(b);
+      },
+      kuIKS: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.kuIKS(StartParticleFxNonLoopedOnEntity, b, ...c);
+  };
+  global.StartParticleFxNonLoopedOnEntity_2 = async (b, ...c) => {
+    const d = {
+      tEBJd: function (a) {
+        return a();
+      },
+      rlfXu: function (a, b) {
+        return a(b);
+      },
+      LWVoc: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.LWVoc(StartParticleFxNonLoopedOnEntity_2, b, ...c);
+  };
+  global.StartNetworkedParticleFxLoopedOnEntity = async (b, ...c) => {
+    const d = {
+      BAcbh: function (a) {
+        return a();
+      },
+      nbbnD: function (a, b) {
+        return a(b);
+      },
+      PfTMh: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.PfTMh(StartNetworkedParticleFxLoopedOnEntity, b, ...c);
+  };
+  global.StartParticleFxLoopedOnEntity = async (b, ...c) => {
+    const d = {
+      NKTiA: function (a) {
+        return a();
+      },
+      XoIfk: function (a, b) {
+        return a(b);
+      },
+      eiwjZ: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.eiwjZ(StartParticleFxLoopedOnEntity, b, ...c);
+  };
+  global.StartParticleFxLoopedOnEntity_2 = async (b, ...c) => {
+    const d = {
+      TAqlA: function (a) {
+        return a();
+      },
+      WOtfI: function (a, b) {
+        return a(b);
+      },
+      jMyNs: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.jMyNs(StartParticleFxLoopedOnEntity_2, b, ...c);
+  };
+  global.StartNetworkedParticleFxLoopedOnEntityBone = async (b, ...c) => {
+    const d = {
+      nAAOy: function (a) {
+        return a();
+      },
+      KzcRL: function (a, b) {
+        return a(b);
+      },
+      HwYoT: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.HwYoT(StartNetworkedParticleFxLoopedOnEntityBone, b, ...c);
+  };
+  global.StartParticleFxLoopedOnEntityBone = async (b, ...c) => {
+    const d = {
+      RKOZq: function (a) {
+        return a();
+      },
+      kfJuL: function (a, b) {
+        return a(b);
+      },
+      ZabMv: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.ZabMv(StartParticleFxLoopedOnEntityBone, b, ...c);
+  };
+  global.StartParticleFxLoopedOnEntityBone_2 = async (b, ...c) => {
+    const d = {
+      Vfwrg: function (a) {
+        return a();
+      },
+      CAGMK: function (a, b) {
+        return a(b);
+      },
+      bECNu: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.bECNu(StartParticleFxLoopedOnEntityBone_2, b, ...c);
+  };
+  global.StartNetworkedParticleFxNonLoopedOnPedBone = async (b, ...c) => {
+    const d = {
+      yEquR: function (a) {
+        return a();
+      },
+      eCwAn: function (a, b) {
+        return a(b);
+      },
+      fiPdR: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.fiPdR(StartNetworkedParticleFxNonLoopedOnPedBone, b, ...c);
+  };
+  global.StartParticleFxNonLoopedOnPedBone = async (b, ...c) => {
+    const d = {
+      loxVu: function (a) {
+        return a();
+      },
+      AuPaa: function (a, b) {
+        return a(b);
+      },
+      YyMAQ: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.YyMAQ(StartParticleFxNonLoopedOnPedBone, b, ...c);
+  };
+  global.StartParticleFxNonLoopedOnPedBone_2 = async (b, ...c) => {
+    const d = {
+      XAxxs: function (a) {
+        return a();
+      },
+      biotJ: function (a, b) {
+        return a(b);
+      },
+      VDvkr: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.VDvkr(StartParticleFxNonLoopedOnPedBone_2, b, ...c);
+  };
+  global.StartParticleFxLoopedAtCoord = async (b, ...c) => {
+    const d = {
+      wzXQT: function (a) {
+        return a();
+      },
+      GKpIO: function (a, b) {
+        return a(b);
+      },
+      gpHAc: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.gpHAc(StartParticleFxLoopedAtCoord, b, ...c);
+  };
+  global.StartParticleFxLoopedOnPedBone = async (b, ...c) => {
+    const d = {
+      RVlsa: function (a) {
+        return a();
+      },
+      pKXaO: function (a, b) {
+        return a(b);
+      },
+      qSfwz: function (a, b, ...c) {
+        return a(b, ...c);
+      }
+    };
+    p();
+    await a(500);
+    return d.qSfwz(StartParticleFxLoopedOnPedBone, b, ...c);
+  };
+  global.SetEntityInvincible = async (a, b) => {
+    r();
+    return SetEntityInvincible(a, b);
+  };
+  global.SetPlayerInvincible = async (a, b) => {
+    r();
+    return SetPlayerInvincible(a, b);
+  };
+  global.NetworkSetEntityInvisibleToNetwork = async (a, b) => {
+    v(a, b);
+    return NetworkSetEntityInvisibleToNetwork(a, b);
+  };
+  global.SetEntityLocallyInvisible = async a => {
+    v(a, true);
+    return SetEntityLocallyInvisible(a);
+  };
+  global.SetLocalPlayerInvisibleLocally = async a => {
+    v(PlayerPedId(), a);
+    return SetLocalPlayerInvisibleLocally(a);
+  };
+  global.SetPlayerInvisibleLocally = async (c, a) => {
+    if (c && c == PlayerId()) {
+      if (a) {
+        return LocalPlayer.state.bypassAntiInvisible = "true";
+      }
+      LocalPlayer.state.bypassAntiInvisible = "false";
+    }
+    return SetPlayerInvisibleLocally(c, a);
+  };
+  global.SetEntityVisible = async (a, b, c) => {
+    v(a, !b);
+    return SetEntityVisible(a, b, c);
+  };
+  map.basejumping = true;
+  map.commonmenu = true;
+  map.commonmenutu = true;
+  map.digitaloverlay = true;
+  map.helicopterhud = true;
+  map.hunting = true;
+  map.mparrow = true;
+  map.mpinventory = true;
+  map.mpleaderboard = true;
+  map.mplobby = true;
+  map.mpweaponscommon = true;
+  map.mpweaponscommon_small = true;
+  map.mpweaponsgang0_small = true;
+  map.mpweaponsgang0 = true;
+  map.mpweaponsgang1_small = true;
+  map.mpweaponsgang1 = true;
+  map.mppilotschool = true;
+  map.shared = true;
+  map.trafficcam = true;
+  map.timerbar_sr = true;
+  map.mpentry = true;
+  const w = async a => {
+    if (a === undefined || a === null || typeof a !== "string") {
+      return;
+    }
+    if (map[a]) {
+      return "FiveEye" + a;
+    }
+    const b = a.toLowerCase();
+    if (map[b]) {
+      return "FiveEye" + b;
+    }
+    const c = b.replace(/\s+/g, "");
+    if (map[c]) {
+      return "FiveEye" + c;
+    }
+    return a;
+  };
+  global.HasStreamedTextureDictLoaded = async a => {
+    const b = await w(a);
+    return HasStreamedTextureDictLoaded(b);
+  };
+  global.RequestStreamedTextureDict = async (a, b) => {
+    const c = await w(a);
+    return RequestStreamedTextureDict(c, b);
+  };
+  global.DrawInteractiveSprite = async (a, b, c, d, e, f, g, h, i, j, l, m) => {
+    const n = await w(a);
+    return DrawInteractiveSprite(n, b, c, d, e, f, g, h, i, j, l, m);
+  };
+  global.DrawSprite = async (a, b, c, d, e, f, g, h, i, j, l, m) => {
+    const n = await w(a);
+    return DrawSprite(n, b, c, d, e, f, g, h, i, j, l, m);
+  };
+  global.DrawSpritePoly = async (a, b, c, d, e, f, g, h, i, j, l, m, n, p, q, r, s, t, u, v, x, y, z, A) => {
+    const B = await w(p);
+    return DrawSpritePoly(a, b, c, d, e, f, g, h, i, j, l, m, n, B, q, r, s, t, u, v, x, y, z, A);
+  };
+  global.DrawSpritePoly_2 = async (a, b, c, d, e, f, g, h, i, j, l, m, n, p, q, r, s, t, u, v, x, y, z, A, B, C, D, E, F, G, H, I) => {
+    const J = await w(y);
+    return DrawSpritePoly_2(a, b, c, d, e, f, g, h, i, j, l, m, n, p, q, r, s, t, u, v, x, J, z, A, B, C, D, E, F, G, H, I);
+  };
+  global.DrawSpriteUv = async (a, b, c, d, e, f, g, h, i, j, l, m, n, p, q) => {
+    const r = await w(a);
+    return DrawSpriteUv(r, b, c, d, e, f, g, h, i, j, l, m, n, p, q);
+  };
+  global.GetTextureResolution = async (a, b) => {
+    const c = await w(a);
+    return GetTextureResolution(c, b);
+  };
+  global.PatchDecalDiffuseMap = async (a, b, c) => {
+    const d = await w(b);
+    return PatchDecalDiffuseMap(a, d, c);
+  };
+  global.SetStreamedTextureDictAsNoLongerNeeded = async a => {
+    const b = await w(a);
+    return SetStreamedTextureDictAsNoLongerNeeded(b);
+  };
+  global.N_0x27feb5254759cde3 = async (a, b) => {
+    const c = await w(a);
+    return N_0x27feb5254759cde3(c, b);
+  };
+  global.N_0x2d3b147afad49de0 = async (a, b, c, d, e, f, g, h, i, j, l, m) => {
+    const n = await w(a);
+    return N_0x2d3b147afad49de0(n, b, c, d, e, f, g, h, i, j, l, m);
+  };
 }
-;
